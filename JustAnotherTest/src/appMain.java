@@ -8,7 +8,36 @@ public class appMain {
 		
 		System.out.println("Yuju!!!!");
 		System.out.println("Y si señores!!!!");
-
+		
+		
+		
+	}
+	
+	static void ConstructGraph(int n)
+	{
+		double xPos[] = new double [n];
+		double yPos[] = new double [n];
+		
+		//Creación de los nodos
+		for (int i=0; i<n; i++){
+			xPos[i]=(100*Math.random());
+			yPos[i]=(100*Math.random());
+		}
+		
+		// Creación de los Arcos 
+		for (int i=0; i<n; i++){
+			for (int j=0; j<n; j++){
+				if(i!=j){
+					if(Math.random()>0.1){
+						// Se crea el arco
+						
+					}
+					
+				}
+			}		
+		}
+		
+		
 	}
 
 }
