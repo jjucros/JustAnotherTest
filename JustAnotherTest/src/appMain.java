@@ -10,6 +10,9 @@ public class appMain {
 		System.out.println("Y si señores!!!!");
 		
 		
+		DBconn_JavaMySQL DBConnect = new DBconn_JavaMySQL();
+		
+		DBConnect.getData();
 		
 	}
 	
