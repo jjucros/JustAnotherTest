@@ -13,6 +13,8 @@ public class appMain {
 		DBconn_JavaMySQL DBConnect = new DBconn_JavaMySQL();
 		
 		DBConnect.getData();
+		//DBConnect.insertLocationData("WH9", "SANTA MARTA", 1000, "PL");
+		//DBConnect.getData();
 		
 	}
 	

@@ -3,6 +3,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import com.mysql.jdbc.PreparedStatement;
+
 
 public class DBconn_JavaMySQL {
 	private Connection con;
@@ -44,5 +46,38 @@ public class DBconn_JavaMySQL {
 			System.out.println("Error: "+ex);
 		}
 	}
+	
+
+	public void insertLocationData(String locID, String locName, double locCapacity, String capUOM)
+	{
+		/*
+		 * Procedimiento para obtener los resgistros de la tabla Locations en la BD 
+		 */
+		try{
+			//rs = st.executeQuery(insertQuery);
+			
+			// the mysql insert statement
+		      String query = " insert into LOCATION (ID, NAME, STORAGE_CAPACITY, CAPACITY_UOM)"
+		        + " values (?, ?, ?, ?)";
+		 
+		      // create the mysql insert preparedstatement
+		      PreparedStatement preparedStmt = (PreparedStatement) con.prepareStatement(query);
+		      preparedStmt.setString (1, locID);
+		      preparedStmt.setString (2, locName);
+		      //preparedStmt.setInt  (3, 2750);
+		      preparedStmt.setDouble(3, locCapacity);		      
+		      preparedStmt.setString (4, capUOM);
+		      
+		      
+		 	// execute the preparedstatement
+		      preparedStmt.execute();
+		}
+		catch(Exception ex){
+			System.out.println("Error: "+ex);
+		}
+	}
+
+	
+	
 
 }
